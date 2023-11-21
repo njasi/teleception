@@ -27,7 +27,7 @@ const {
 
 dotenv.config();
 
-const DEFAULT_APP_TITLE = `Telegram${APP_ENV !== 'production' ? ' Beta' : ''}`;
+const DEFAULT_APP_TITLE = `Tele${APP_ENV !== 'production' ? ' Beta' : 'ception'}`;
 
 // GitHub workflow uses an empty string as the default value if it's not in repository variables, so we cannot define a default value here
 process.env.BASE_URL = process.env.BASE_URL || PRODUCTION_URL;
@@ -36,6 +36,8 @@ const {
   BASE_URL,
   ELECTRON_HOST_URL = 'https://telegram-a-host',
   APP_TITLE = DEFAULT_APP_TITLE,
+  TELEGRAM_API_ID,
+  TELEGRAM_API_HASH,
 } = process.env;
 
 const CSP = `
@@ -200,8 +202,8 @@ export default function createConfig(
         APP_NAME: null,
         APP_TITLE,
         RELEASE_DATETIME: Date.now(),
-        TELEGRAM_API_ID: undefined,
-        TELEGRAM_API_HASH: undefined,
+        TELEGRAM_API_ID,
+        TELEGRAM_API_HASH,
         // eslint-disable-next-line no-null/no-null
         TEST_SESSION: null,
         IS_ELECTRON_BUILD: false,
