@@ -28,6 +28,6 @@
     "dev",
     "webpack.config.ts",
     "webpack-electron.config.ts",
-    "babel.config.js",
+    "babel.config.js", "app.js",
   ]
 }
